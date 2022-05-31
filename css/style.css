@@ -1,0 +1,142 @@
+:root {
+  --primary-clr: #00bcd4;
+  --clr-1: #232529;
+  --clr-2: #e2e3e7;
+  --clr-3: #e3796a;
+}
+
+/* prefer color scheme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-clr: #00bcd4;
+    --clr-1: #232529;
+    --clr-2: #e2e3e7;
+    --clr-3: #e3796a;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-clr: #448460;
+    --clr-1: #e2e3e7;
+    --clr-2: #232529;
+    --clr-3: #11190d;
+  }
+}
+
+/* ------------ Start Global Rules --------------*/
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1370px;
+  }
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ------------ End Global Rules --------------*/
+
+body {
+  min-height: 1000px;
+  font-family: "Roboto", sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  /* font-family: 'Cairo', sans-serif; */
+  background-color: var(--clr-2);
+}
+.title {
+  word-spacing: 5px;
+  letter-spacing: 2px;
+  line-height: 2.6;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+  color: var(--clr-3);
+  background-color: var(--clr-1);
+}
+
+/* testing */
+#theme-swicher {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 5px;
+  /* min-width: 40px; */
+  background-color: var(--clr-2);
+}
+
+#theme-swicher label {
+  cursor: pointer;
+}
+#theme-swicher label .fa-moon {
+  color: rgb(230, 212, 161);
+}
+#theme-swicher label .fa-sun {
+  color: rgb(240, 180, 14);
+}
+#theme-swicher input {
+  position: absolute; 
+  bottom: -20px;
+}
+#theme-swicher input:checked .title {
+  background-color: aqua;
+}
+
+#theme-swicher #theme {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+
+
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+.about-us h2 {
+  color: var(--primary-clr);
+}
+.about-us p {
+  font-size: 18px;
+  color: var(--clr-1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
