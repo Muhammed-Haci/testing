@@ -37,20 +37,23 @@
 </head>
 
 <body>
-  <p class="title"> Hey! , this is a page for testing your knowledge.</p>
-  <div class="container">
-    <form action="">
-      <label>User Name</label>
-      <input type="text" name="username" inputmode="text">
-      <label>Age</label>
-      <input type="number" name="age" inputmode="numeric">
-      <label>email</label>
-      <input type="email" name="email" inputmode="email">
-      <label>Phone</label>
-      <input type="tel" name="phone" inputmode="tel">
-      <label>Search</label>
-      <input type="search" name="find" inputmode="search">
-    </form>
+  <h2 class="title"> Hey! , this is a page for testing your knowledge.</h2>
+  <div class="containerr">
+    <label for="">back camera video</label>
+    <br>
+    <input type="file" capture="environment" accept="video/*">
+    <br><br>
+    <label for="">back camera image</label>
+    <br>
+    <input type="file" capture="environment" accept="image/*">
+    <br><br>
+    <label for="">front camera picture</label>
+    <br>
+    <input type="file" capture="user" accept="image/*">
+    <br><br>
+    <label for="">front camera video</label>
+    <br>
+    <input type="file" capture="user" accept="video/*">
   </div>
   <script src="js/script.js"></script>
 </body>
