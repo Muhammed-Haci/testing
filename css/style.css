@@ -1,65 +1,123 @@
 /* ------------ Start Global Rules --------------*/
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+* {
+  margin: 0;
+  padding: 0;
 }
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-@media (min-width: 1400px) {
-  .container {
-    width: 1370px;
-  }
-}
-
-video {
-  max-width: 100%;
-  height: auto;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 ul {
   list-style: none;
 }
-
 /* ------------ End Global Rules --------------*/
 
 body {
-  min-height: 1000px;
+  min-height: 1500px;
+  line-height: 1.5;
   font-family: "Roboto", sans-serif;
-  /* font-family: 'Open Sans', sans-serif; */
-  /* font-family: 'Cairo', sans-serif; */
-  background-color: var(--clr-2);
-}
-.title {
-  word-spacing: 5px;
-  letter-spacing: 2px;
-  line-height: 2.6;
-  text-align: start;
-  font-size: 16px;
-  font-weight: bold;
-  user-select: none;
-  color: #efefef;
-  padding-inline-start: 10px;
-  background-color: #222;
+  background-color: #efefef;
 }
 
-/* Testing */
+/* Start styling the slider */
+.slider {
+  position: relative;
+  min-height: 40vh;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .slider {
+    min-height: 60vh;
+  }
+}
+@media (min-width: 992px) {
+  .slider {
+    min-height: 80vh;
+  }
+}
+.slider figure {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.slider figure.active {
+  opacity: 1;
+  z-index: 2;
+}
+.slider figure img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+.slider figure figcaption {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 5px;
+  z-index: 5;
+  color: #fff;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 768px) {
+  .slider figure figcaption {
+    display: block;
+  }
+}
+.slider .slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 3;
+}
+.slider .slider-controls :is(.prev, .next) {
+  opacity: 0;
+  cursor: pointer;
+  padding: 5px 6px;
+  transition: opacity 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.slider:hover .slider-controls :is(.prev, .next) {
+  opacity: 1;
+}
+.slider .slider-controls :is(.prev, .next):hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.slider .indicators {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 3;
+  width: 150px;
+}
+.slider .indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.437);
+}
+@media (min-width: 768px) {
+  .slider .indicators li {
+    height: 15px;
+    width: 15px;
+  }
+}
+.slider .indicators li:is(:hover, :focus, .active) {
+  border-color: rgb(212, 138, 0);
+  background-color: rgb(243, 163, 16);
+}
