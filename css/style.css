@@ -173,7 +173,7 @@ input {
 
 /* =========== End Variables ============*/
 /* ============ Start themes ============*/
-body:has(header [type='checkbox']:checked) {
+body.Dark {
   --info-clr: #d0ddf1;
 
   --bg-clr: #16191e;
@@ -181,7 +181,7 @@ body:has(header [type='checkbox']:checked) {
 
   --box-shadow: 0px 0px 20px var(--fg2-clr);
 }
-body:has(header [type='checkbox']:checked) header .settings a {
+body.Dark  header .settings a {
   border-color: var(--secondary-clr);
 }
 /* =========== End themes ===============*/
@@ -229,7 +229,7 @@ section h2 {
 }
 .options-arrow {
   inset-inline-end:0;
-  inset-block-start: inherit;
+  inset-inline-start: inherit;
   transform: scaleX(-1);
   fill: var(--primary-clr)
 }
@@ -354,12 +354,12 @@ header .container input[type="checkbox"]::before {
 }
 .hero .imgs__box {
   position: relative;
-  margin-left: auto;
+  margin-inline-start: auto;
 }
 .hero .imgs__box img:first-child {
   display: none;
   position: absolute;
-  top: -26rem;
+  top: -27rem;
   inset-inline-end: -26rem;
   min-inline-size: 65rem;
   max-block-size: unset;
@@ -521,7 +521,7 @@ header .container input[type="checkbox"]::before {
 .contact__me .content button[type='reset'] {
   position: absolute;
   top: 1.11rem;
-  left: 13.2rem;
+  inset-inline-start: 13.2rem;
   border: none;
   font-weight: bold;
   visibility: hidden;
