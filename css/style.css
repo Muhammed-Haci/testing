@@ -181,7 +181,27 @@ body:has(header [type='checkbox']:checked) {
 
   --box-shadow: 0px 0px 20px var(--fg2-clr);
 }
+body:has(header [type='checkbox']:checked) header .settings a {
+  border-color: var(--secondary-clr);
+}
 /* =========== End themes ===============*/
+/* ===== Start Languages' Rules =========*/
+[lang="ar"] .options-arrow {
+  transform: scaleX(1);
+}
+[lang="ar"] .method-arrow {
+  transform: scaleX(-1);
+}
+[lang="ar"] .hero .imgs__box img:nth-of-type(2) {
+  transform: scaleX(-1);
+}
+[lang="ar"] header .container a span > span {
+  letter-spacing: 0;
+}
+[lang="ar"] header .settings a {
+  background-color: #241c3b;
+}
+/* ====== End Languages' Rules ==========*/
 
 /* ======= Start common Styles ========= */
 
@@ -204,12 +224,12 @@ section h2 {
   width: clamp(100px,-115.384617px + 61.538462vw,500px);
 }
 .method-arrow {
-  left: 0;
+  inset-inline-start: 0;
   fill: var(--secondary-clr)
 }
 .options-arrow {
-  right:0;
-  left: inherit;
+  inset-inline-end:0;
+  inset-block-start: inherit;
   transform: scaleX(-1);
   fill: var(--primary-clr)
 }
@@ -225,7 +245,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
-header .container a {
+header .container > a {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -252,11 +272,27 @@ header .container a span > span {
   letter-spacing: clamp(2px, 3px, 5px);
   color: var(--fg-clr);
 }
+header .settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacer-sm);
+}
+header .settings a {
+  display: flex;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--bg-clr);
+  background-color: #006c35;
+}
 header .container input[type="checkbox"] {
   position: relative;
   appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   border: 2px solid var(--bg-clr);
   cursor: pointer;
@@ -307,7 +343,7 @@ header .container input[type="checkbox"]::before {
   padding:  var(--spacer-sm)  var(--spacer-md);
   margin-block-start: var(--spacer-md);
   text-transform: capitalize;
-  color: #d0ddf1;
+  color: #fff;
   transition: all var(--transition) cubic-bezier(1, -0.04, 0, 1.21);
   box-shadow: 4px 4px 0 var(--info-clr);
   background-color: var(--fg-clr);
@@ -324,7 +360,7 @@ header .container input[type="checkbox"]::before {
   display: none;
   position: absolute;
   top: -26rem;
-  right: -26rem;
+  inset-inline-end: -26rem;
   min-inline-size: 65rem;
   max-block-size: unset;
 }
@@ -344,7 +380,7 @@ header .container input[type="checkbox"]::before {
   align-items: center;
   column-gap: var(--spacer-sm);
   position: absolute;
-  left: -5rem;
+  inset-inline-start: -5rem;
   bottom: 1rem;
   width: clamp(16rem, 40vw, 25rem);
   font-weight: 600;
