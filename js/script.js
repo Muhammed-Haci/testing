@@ -1,83 +1,33 @@
-let slider = document.querySelector(".slider");
-let slides = Array.from(document.querySelectorAll(".slider > figure"));
-let prev = document.querySelector(".prev");
-let next = document.querySelector(".next");
-let current = 0;
-let slidesCount = slides.length - 1;
+// // --- Toggle dark light mood ---:
 
-// create the indicaters items:
-for (let i = 0; i <= slidesCount; i++) {
-  let bullet = document.createElement("li");
-  bullet.setAttribute("data-index", i);
-  if (i === 0) {
-    bullet.classList.add("active");
-  }
-  document.querySelector(".indicators").appendChild(bullet);
-}
+// // Get the variables:
+// let themeSwicher = document.querySelector("#theme-swicher");
+// let themeIcon = document.querySelector("#theme-swicher .icon");
+// let localData = localStorage.getItem("theme");
 
-// select the indicators items:
-let indicators = Array.from(document.querySelectorAll(".indicators li"));
+// // check the localStorage Theme:
+// if (localData) {
+//   localData == "light"
+//     ? (themeIcon.src = "images/moon.png")
+//     : (themeIcon.src = "images/sun.png");
+//   document.body.classList.add(localData);
+// }
 
-// ----------- prev button function -----------:
-prev.addEventListener("click", () => {
-  removeActive();
+// // Change The Theme function:
+// themeSwicher.addEventListener("click", () => {
+//   document.body.classList.toggle("dark");
 
-  current--;
+//   if (document.body.classList.contains("dark")) {
+//     themeIcon.src = "images/sun.png";
+//     localStorage.setItem("theme", "dark");
+//     document.body.classList.remove("light");
+//   } else {
+//     themeIcon.src = "images/moon.png";
+//     document.body.classList.add("light");
+//     localStorage.setItem("theme", "light");
+//   }
+// });
 
-  if (current < 0) {
-    current = slidesCount;
-  }
-
-  addActive();
-});
-
-// ----------- Next button function -----------:
-next.addEventListener("click", () => {
-  removeActive();
-
-  current++;
-
-  if (current > slidesCount) {
-    current = 0;
-  }
-
-  addActive();
-});
-
-// ------ indicators click function --------:
-indicators.forEach((indicator) => {
-  indicator.addEventListener("click", (e) => {
-    removeActive();
-    current = e.target.dataset.index;
-    addActive();
-  });
-});
-
-// ----------- Set autoplay function -----------:
-let clickNext = () => {
-  next.click();
-};
-
-let repeater = setInterval(clickNext, 5000);
-
-// ----------- Stop autoplay on hover function -----------:
-slider.addEventListener("mouseover", () => {
-  clearInterval(repeater);
-});
-
-// ----------- Set autoplay on mouse out function -----------:
-slider.addEventListener("mouseout", () => {
-  repeater = setInterval(clickNext, 5000);
-});
-
-// ----------- Remove Active Class function -----------:
-function removeActive() {
-  slides.forEach((slide) => slide.classList.remove("active"));
-  indicators.forEach((indicator) => indicator.classList.remove("active"));
-}
-
-// ----------- Add Active Class function -----------:
-function addActive() {
-  slides[current].classList.add("active");
-  indicators[current].classList.add("active");
-}
+// Add the copyright year to the footer:
+let year = document.querySelector("footer .year");
+year.innerHTML = new Date().getFullYear();
