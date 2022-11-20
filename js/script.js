@@ -41,7 +41,7 @@ checkbox.addEventListener("click", (e) => {
     audio.remove();
   } else {
     checkbox.removeAttribute("checked");
-    window.localStorage.setItem("Theme", "Light");
+    window.localStorage.removeItem("Theme", "Light");
     // add the audio to the body:
     const audio = document.createElement("audio");
     audio.src = "https://a.top4top.io/m_2514r403l1.mp3";
