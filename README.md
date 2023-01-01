@@ -17,7 +17,7 @@ ___
 - - -
 
 <!-- Links -->
-URL Demo address: [Click Here](https://muhammed-haci.github.io/testing)
+[Google](https://google.com)
 
 
 <!-- ol list -->
@@ -41,3 +41,9 @@ install react by writing `npm i react-app my-app` that's it.
 ```js
     const sum = (num1 , num2) => {num1 + num2};
 ```
+
+<!-- table -->
+| Id | Name | age |
+|----|----|----|
+| 1 | Muhammed | 24 |
+
